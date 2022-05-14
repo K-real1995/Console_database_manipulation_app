@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    //При вызове метода создается подключение и объект класса Statement для выполнения SQL запросов
+    //При вызове метода создается подключение и объект класса Statement для выполнения SQL запросов.
     public static Connection connect;
     public static Statement statement;
 
