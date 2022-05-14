@@ -3,7 +3,7 @@ package DbManipulation;
 import java.util.Scanner;
 
 public class DeleteDb {
-
+    //Метод вызывающий меню по удалению данных в таблице cars и возвращающий запрос к базе данных по заданным параметрам
     public static String deleteCar() {
 
         Scanner in = new Scanner(System.in);
@@ -19,6 +19,7 @@ public class DeleteDb {
         System.out.println(menu);
         int choice = in.nextInt();
         if (choice == 1) {
+            System.out.println("Все автомобили удалены");
             return "DELETE FROM cars;";
         } else if (choice == 2) {
             Scanner scanner = new Scanner(System.in);
@@ -50,7 +51,7 @@ public class DeleteDb {
         }
     }
 
-
+    //Метод вызывающий меню по удалению данных в таблице shops и возвращающий запрос к базе данных по заданным параметрам
     public static String deleteShop() {
         Scanner in = new Scanner(System.in);
         String menu = """
@@ -62,7 +63,7 @@ public class DeleteDb {
         System.out.println(menu);
         int choice = in.nextInt();
         if (choice == 1) {
-            System.out.println("Магазины успешно удалены");
+            System.out.println("Все магазины удалены");
             return "DELETE FROM shops;";
         } else if (choice == 2) {
             Scanner scanner = new Scanner(System.in);
@@ -76,10 +77,12 @@ public class DeleteDb {
             return null;
         }
     }
+
+    //Метод вызывающий меню по удалению данных в таблице users и возвращающий запрос к базе данных по заданным параметрам
     public static String deleteUser(){
         Scanner in = new Scanner(System.in);
         String menu = """
-                ____Поиск автомобиля____
+                ____Удаление пользователей____
                 1.Удалить всех пользователей
                 2.Удалить пользователя по имени
                 3.Удалить пользователя по фамилии

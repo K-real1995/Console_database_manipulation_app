@@ -3,8 +3,8 @@ package DbManipulation;
 import java.sql.Connection;
 import java.util.Scanner;
 
-public class AddDb {
-
+public class InsertDb {
+    //Метод добавляющий автомобиль в таблицу cars
     public static String insertCar(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите марку автомобиля: ");
@@ -20,7 +20,7 @@ public class AddDb {
                 "VALUES ('" + name + "', '" + color + "', '" + model + "', '" + speed + "');";
 
     }
-
+    //Метод добалющий магазин в таблицу shops
     public static String insertShop(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите название магазина: ");
@@ -31,7 +31,7 @@ public class AddDb {
         return "INSERT INTO shops(name, address) " +
                 "VALUES ('" + name + "', '" + address + "');";
     }
-
+    //Медот добаляющий пользователя в таблицу users
     public static String insertUser(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите имя: ");
@@ -40,18 +40,15 @@ public class AddDb {
         String surname = scanner.nextLine();
         System.out.println("Введите количество денежных средств");
         String money = scanner.nextLine();
-        System.out.println("Введите дату рождания (в формате YYYY-MM-DD HH:MM): ");
-        String date = scanner.nextLine();
+        System.out.println("Введите год рождения: ");
+        String yearOfBirth = scanner.nextLine();
+        System.out.println("Введите месяц рождения: ");
+        String monthOfBirth = scanner.nextLine();
+        System.out.println("Введите день рождения: ");
+        String dayOfBirth = scanner.nextLine();
+        String date = yearOfBirth + "-" + monthOfBirth + "-" + dayOfBirth;
 
         return "INSERT INTO users(name, surname, money, birthday) " +
                 "VALUES ('" + name + "', '" + surname + "', '" + money + "', '" + date + "');";
-    }
-
-    public static void close(Connection connection){
-        try {
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
     }
 }

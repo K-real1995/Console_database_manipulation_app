@@ -3,7 +3,7 @@ package DbManipulation;
 import java.util.Scanner;
 
 public class SelectDb {
-
+    //Метод вызывающий меню по поиску данных в таблице cars и возвращающий запрос к базе данных по заданным параметрам
     public static String SelectCar() {
         Scanner in = new Scanner(System.in);
         String menu = """
@@ -45,7 +45,8 @@ public class SelectDb {
                 String carSpeedMin = scanner.nextLine();
                 System.out.println("Введите верхнюю границу максимальной скорости автомобиля: ");
                 String carSpeedMax = scanner.nextLine();
-                return "SELECT name, color, model, speed FROM cars WHERE speed BETWEEN '" + carSpeedMin + "' AND '" + carSpeedMax + "';";
+                return "SELECT name, color, model, speed FROM cars WHERE speed BETWEEN '" + carSpeedMin + "' AND '"
+                        + carSpeedMax + "';";
             }
             case 6 -> {
                 return null;
@@ -57,7 +58,7 @@ public class SelectDb {
         }
     }
 
-
+    //Метод вызывающий меню по поиску данных в таблице shops и возвращающий запрос к базе данных по заданным параметрам
     public static String SelectShop() {
         Scanner in = new Scanner(System.in);
         String menu = """
@@ -88,7 +89,7 @@ public class SelectDb {
         }
     }
 
-
+    //Метод вызывающий меню по поиску данных в таблице users и возвращающий запрос к базе данных по заданным параметрам
     public static String SelectUser(){
         Scanner in = new Scanner(System.in);
         String menu = """
